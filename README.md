@@ -1,7 +1,7 @@
 # Pitch-Perfect
 
 ## Description
-This is an application that enables a user to post pitches and view other users' pitches. A user can log in to the application using their credentials, post comments and leave remarks on other people's pitches.
+This is an application that enables a user to post pitches and view other users' pitches. A user can log in to the application using their credentials, post comments and leave comments on other people's pitches.
 ### By Nasibo Yussuf
 
 ## Setup/Installation Requirements
