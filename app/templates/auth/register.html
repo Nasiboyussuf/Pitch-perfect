@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock%}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<div class="wrapper-view" id="secondpage">
+        <div class="container">
+                <div id="title2">
+                    <h2>Welcome to Pitch-perfect.</h2>
+                    <h4 > Get your idea out there</h4>
+                    </div>
+                <div class="row">
+                <div class="col-md-2"> </div>
+                <div class="col-md-8">
+                
+                {{wtf.quick_form(registration_form)}}
+                
+                </div>
+                <div class="col-md-2"></div>
+                </div>
+                </div>
+</div>
+
+{% endblock%}
