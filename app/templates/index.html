@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock%}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<div style="background-image:url('https://logosbynick.com/wp-content/uploads/2018/07/gimp-delete-background-to-transparent-1024x601.jpg'); background-repeat: no-repeat; background-size: cover; background-position: fixed;padding:220px;overflow: none;">
+<div class="wrapper-view">
+    <div class="container-fluid" style="background-color:rgba(34, 8, 201, 0.69); text-align: center;">
+        <div id="title">
+            <h2 style="color: white;">Welcome to Pitch-perfect.</h2>
+            <h4 style="color: white; text-align: center; font-weight: 40px; font-size: 40px;"> Get your idea out there</h4>
+        </div>
+        <div class="row" id="intro">
+            <div class="col-md-4" class="menu" id="menu1">
+                <a href="/timeline" style="color: white;">
+                    <i class="fas fa-comments"></i>
+                    <p id="select1">Comment on ideas</p>
+                </a>
+        </div>
+        <div class="col-md-4" class="menu" id="menu2">
+            <a href="/timeline" style="color: white;">
+                <i class="fas fa-lightbulb"></i>
+                <p id="select2">Make a pitch</p>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/authenticate/login" style="color: white;">
+                <i class="fas fa-edit"></i>
+                <p id="select3">Register or Login</p></a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+{% endblock %}
+
