@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<div class="wrapper-view" style="background-color: #ECE2D0;font-family: Arial, Helvetica, sans-serif;padding-bottom: 40px;">
+    <div class="container-fluid" id="profilepage">
+        <a href="/" class="row" style="text-decoration:none;">
+            <i class="far fa-image" style="color:white;font-size:50px;margin-left:600px;"></i>
+            <h2 style="color:white; text-align: center; font-weight: 40px; font-size: 20px;">Change profile photo</h2>
+        </a>
+        <div class="row">
+            <div class="col-md-4">
+                {% if user.profile_pic_path %}
+                    <img src="{{url_for('static',filename=user.profile_pic_path)}}" style="margin-top: -110px;" alt="" class="img-thumbnail" id="profpic">
+                {% if user == current_user %}
+                    <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
+                      <input type="file"  name="photo" class="form-control" required>
+                      <input type="submit" style="margin:5px;">
+                    </form>
+                {% endif %}
+                {%else%}
+                <a href="/changeprofile" style="text-decoration:none;text-align: center;">
+                    <div id="profpic" style="margin-top: -110px;">
+                        {% if user == current_user %}
+                            <form  style="margin-top:100px;" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
+                              <input type="file"  name="photo" class="form-control" required>
+                              <input type="submit" style="margin:5px;">
+                            </form>
+                        {% endif %}
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:200px;margin-left:0;color:purple;">
+        <div class="col-md-6">
+            {{wtf.quick_form(form)}}
+        </div>
+    </div>
+
+{% endblock %}
